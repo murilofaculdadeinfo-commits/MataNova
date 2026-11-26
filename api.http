@@ -1,0 +1,75 @@
+### MataNova · testes manuais da API 
+### Com a API rodando (vp run api), clique em "Send Request" acima de cada bloco. 
+  
+@api = http://localhost:3000/api 
+  
+### Saúde da API e do banco 
+GET {{api}}/health 
+  
+### Listar doadores 
+GET {{api}}/doadores 
+  
+### Buscar um doador 
+GET {{api}}/doadores/1 
+  
+### Doador que não existe (espera 404) 
+GET {{api}}/doadores/999 
+  
+### Cadastrar doador (espera 201) 
+POST {{api}}/doadores 
+Content-Type: application/json 
+  
+{ 
+  "nome": "Beatriz Ramos", 
+  "email": "beatriz@exemplo.com", 
+  "telefone": "(11) 96666-1003" 
+} 
+  
+### Cadastrar sem nome (espera 400) 
+POST {{api}}/doadores 
+Content-Type: application/json 
+  
+{ "email": "sem.nome@exemplo.com" } 
+  
+### (continua: e-mail repetido, editar, excluir, itens e doações)
+### Editar doador
+PUT {{api}}/doadores/1
+Content-Type: application/json
+
+{
+  "nome": "Mercado Bom Preço Atualizado",
+  "email": "contato@bompreco.exemplo.com",
+  "telefone": "(11) 3333-1000"
+}
+
+### Listar itens
+GET {{api}}/itens
+
+### Listar doações
+GET {{api}}/doacoes
+
+### Cadastrar doação (espera 201)
+POST {{api}}/doacoes
+Content-Type: application/json
+
+{
+  "id_doador": 2,
+  "data_doacao": "2026-10-22",
+  "observacao": "Arrecadação da escola",
+  "itens": [
+    { "id_item": 1, "quantidade": 4 },
+    { "id_item": 4, "quantidade": 6 }
+  ]
+}
+
+### Doação com doador inexistente (espera 400)
+POST {{api}}/doacoes
+Content-Type: application/json
+
+{
+  "id_doador": 999,
+  "data_doacao": "2026-10-22",
+  "itens": [
+    { "id_item": 1, "quantidade": 1 }
+  ]
+}
