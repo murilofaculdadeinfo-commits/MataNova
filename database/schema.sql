@@ -5,6 +5,13 @@ SET NAMES utf8mb4;
 DROP DATABASE IF EXISTS MataNova; 
 CREATE DATABASE MataNova CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 
 USE MataNova; 
+CREATE TABLE usuario (
+  id_usuario  INT AUTO_INCREMENT PRIMARY KEY,
+  nome        VARCHAR(100) NOT NULL,
+  email       VARCHAR(100) NOT NULL UNIQUE,
+  senha_hash  CHAR(60) NOT NULL,
+  criado_em   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
   
 CREATE TABLE doador ( 
   id_doador     INT AUTO_INCREMENT PRIMARY KEY, 

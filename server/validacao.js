@@ -27,3 +27,7 @@ export function validarDoacao(dados = {}) {
   if (new Set(ids).size !== ids.length) return "O mesmo item aparece mais de uma vez";
   return null;
 }
+export function validarLogin(dados) {
+  if (!dados.email || !dados.senha) return "Informe e-mail e senha";
+  return null;
+}

@@ -2,6 +2,11 @@
   
 SET NAMES utf8mb4; 
 USE MataNova; 
+-- Usuário de demonstração
+-- e-mail: voluntario@exemplo.com   senha: conectadoa123
+INSERT INTO usuario (nome, email, senha_hash) VALUES
+  ('Voluntário Demo', 'voluntario@exemplo.com',
+   '$2b$10$2eKo3u3KdOu3DDL0bK6KluV298Bfz23tlhLup9X73xuGsHJAvhqQq');
 
 -- Categorias  
 INSERT INTO categoria (nome) VALUES 
