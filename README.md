@@ -61,9 +61,9 @@ Roda em ambiente local: frontend com Vite+, API com Node.js e Express, banco MyS
 
 ## Usuário de demonstração
 
-| E-mail                 | Senha       |
-| ---------------------- | ----------- |
-| voluntario@exemplo.com | MataNova123 |
+| E-mail                           | Senha       |
+| -------------------------------- | ----------- |
+| MataNova@meioambiente.ong.com.br | MataNova123 |
 
 Para trocar a senha, gere um novo hash com `node server/gerar-hash.js NOVA_SENHA`
 e substitua o valor de `senha_hash` no `database/seed.sql`.
